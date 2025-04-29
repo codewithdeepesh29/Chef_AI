@@ -1,0 +1,28 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!-- Background Circle for a clean contrast -->
+    <path
+        android:fillColor="#F2F2F2"
+        android:pathData="M190,100 A90,90 0 1,1 10,100 A90,90 0 1,1 190,100" />
+
+    <!-- Chef's Hat: curved part representing the puff -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:strokeColor="#000000"
+        android:strokeWidth="2"
+        android:pathData="M50,110 C50,70 150,70 150,110 Q150,130 100,140 Q50,130 50,110 Z" />
+
+    <!-- Chef's Hat: top band -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:strokeColor="#000000"
+        android:strokeWidth="2"
+        android:pathData="M70,60 h60 a10,10 0 0 1 0,20 h-60 a10,10 0 0 1 0,-20 z" />
+
+    <!-- Note: The original SVG contained a <text> element for 'ChefAI'.
+         To include text in a vector drawable, convert the text to path data. -->
+</vector>
