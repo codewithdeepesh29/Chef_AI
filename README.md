@@ -13,51 +13,82 @@
 
 ---
 
-## ✨ Overview
-Chef AI is an Android application that **turns the ingredients in your fridge into complete recipes** powered by the ChatGPT API.  
-Features include:
+## ✨ What is Chef AI?
 
-- **AI recipe generation** (GPT 4o) from an idea + ingredient list  
-- **Beautiful recipe card** with image, timings, servings, step-by-step instructions  
-- **Offline cache & searchable history** via Room database  
-- **Share-sheet integration** – send a recipe to friends or open it in a browser  
-- **Dark-mode toggle & dietary preference** stored in DataStore  
+**Chef AI** is an Android app that turns the ingredients you already own into delicious, step-by-step recipes—powered by the ChatGPT 4o model.  
+Stop wasting food, find inspiration fast, and share uniquely generated dishes with friends.
 
-<table>
-  <tr>
-    <td align="center"><img src="docs/screenshots/home_light.png" width="200"/></td>
-    <td align="center"><img src="docs/screenshots/recipe_card_dark.png" width="200"/></td>
-    <td align="center"><img src="docs/screenshots/search.png" width="200"/></td>
-  </tr>
-  <tr>
-    <td align="center">Home</td>
-    <td align="center">Recipe details</td>
-    <td align="center">Search saved recipes</td>
-  </tr>
-</table>
+| Home → Generate | Recipe Card | Search History |
+|:---:|:---:|:---:|
+| <img src="docs/screenshots/home.png" width="200"> | <img src="docs/screenshots/card.png" width="200"> | <img src="docs/screenshots/search.png" width="200"> |
+
+*`docs/screenshots/*` are placeholders—swap in your real screenshots before pushing.*
 
 ---
 
-## 🧩 Tech Stack
+## 📋 Table of Contents
+1. [Features](#features)
+2. [Tech stack](#tech-stack)
+3. [Prerequisites](#prerequisites)
+4. [Quick start](#quick-start)
+5. [Running the project](#running-the-project)
+6. [Testing](#testing)
+7. [Project structure](#project-structure)
+8. [Contributing](#contributing)
+9. [Team](#team)
+10. [License](#license)
+
+---
+
+## Features
+
+- **AI recipe generation** — GPT 4o creates a full recipe from an idea & fridge contents  
+- **Beautiful recipe cards** — ingredients, timings, instructions, AI-generated image  
+- **Offline cache** — Room database stores every generated recipe, searchable offline  
+- **Dark-mode & dietary preference** — persisted in DataStore  
+- **Share-sheet integration** — one-tap share to any app  
+- **Responsive UI** — works both portrait & landscape
+
+---
+
+## Tech stack
 
 | Layer | Library / Tool |
 |-------|----------------|
-| UI    | **Jetpack Compose**, Material 3, Coil |
-| State | **ViewModel**, Kotlin Coroutines |
-| Data  | **Retrofit 2** (ChatGPT API) • **Room** (local cache) • **DataStore** (preferences) |
-| DI    | Hilt (optional – see `build.gradle`) |
-| Testing | JUnit 5, Turbine (Flow), Robolectric |
+| UI            | **Jetpack Compose**, Material 3, Coil |
+| State & DI    | ViewModel, Kotlin Coroutines, (optional) Hilt |
+| Networking    | **Retrofit 2** + OkHttp logging |
+| AI backend    | **OpenAI ChatGPT API** |
+| Persistence   | **Room** database • **DataStore** (preferences) |
+| Testing       | JUnit 5, Turbine, Robolectric |
 
 ---
 
-## 🚀 Getting Started
+## Prerequisites
 
-### 1. Prerequisites
-* Android Studio **Giraffe / Hedgehog** or newer  
-* JDK 17  
-* A GitHub personal-access token (PAT) if cloning privately  
+| Tool | Version |
+|------|---------|
+| **Android Studio** | Hedgehog | 
+| **Gradle**         | Wrapper 8.x (bundled) |
+| **JDK**            | 17 |
+| **OpenAI API key** | ChatGPT 4o access |
 
-### 2. Clone the repo
+---
+
+## Quick start
+
 ```bash
+# 1 • Clone the repo
 git clone https://github.com/your-username/ChefAI.git
 cd ChefAI
+
+# 2 • Add your OpenAI key (local.properties is NOT committed)
+echo "OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxx" >> local.properties
+
+# 3 • Open the project
+#    Android Studio → File ▸ Open... ▸ select project root
+
+# 4 • Sync & run
+#    Click ▶ or use:
+./gradlew installDebug
+adb shell am start -n "com.example.chefai/.MainActivity"
