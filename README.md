@@ -60,7 +60,6 @@ Stop wasting food, find inspiration fast, and share uniquely generated dishes wi
 | Networking    | **Retrofit 2** + OkHttp logging |
 | AI backend    | **OpenAI ChatGPT API** |
 | Persistence   | **Room** database • **DataStore** (preferences) |
-| Testing       | JUnit 5, Turbine, Robolectric |
 
 ---
 
