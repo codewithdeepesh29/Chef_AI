@@ -42,11 +42,20 @@ import com.google.gson.Gson
 import java.net.URLEncoder
 import java.nio.charset.StandardCharsets
 import androidx.navigation.NavHostController // Ensure this import is present
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.LightMode
+import androidx.compose.material.icons.filled.DarkMode
+
 
 @Composable
 fun HomeScreen(
     navController: NavHostController,
     onNavigate: (Screen) -> Unit,
+    isDarkTheme: Boolean,
+    onToggleTheme: () -> Unit,
     recipeViewModel: RecipeViewModel = viewModel()
 ) {
     var idea by rememberSaveable { mutableStateOf("") }
@@ -111,7 +120,23 @@ fun HomeScreen(
     }
 
     Scaffold(
-        bottomBar = { BottomNavBar(onNavigate) }
+        topBar = {
+            TopAppBar(
+                title = {
+                    Text("ChefAI", fontWeight = FontWeight.Bold)
+                },
+                actions = {
+                    IconButton(onClick = { onToggleTheme() }) {
+                        Icon(
+                            imageVector = if (isDarkTheme) Icons.Default.LightMode else Icons.Default.DarkMode,
+                            contentDescription = "Toggle Theme"
+                        )
+                    }
+                }
+            )
+        },
+
+        bottomBar = { BottomNavBar(selectedScreen = Screen.Home, onNavigate = onNavigate) }
     ) { paddingValues ->
         Column(
             modifier = Modifier
@@ -131,26 +156,26 @@ fun HomeScreen(
                 text = "ChefAI",
                 style = MaterialTheme.typography.headlineLarge.copy(fontWeight = FontWeight.Bold),
                 modifier = Modifier.align(Alignment.CenterHorizontally),
-                color = Color.Black
+                color = MaterialTheme.colorScheme.onSurface
             )
             // --- Input Cards ---
             Card(elevation = CardDefaults.cardElevation(4.dp), modifier = Modifier.fillMaxWidth()) {
                 Column(modifier = Modifier.padding(16.dp)) {
-                    Text("Recipe Idea", fontWeight = FontWeight.Bold, color = Color.Black)
+                    Text("Recipe Idea", fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
                     Spacer(modifier = Modifier.height(4.dp))
                     TextField(value = idea, onValueChange = { idea = it }, placeholder = { Text("E.g. Quick weekday dinner, Italian Pasta") }, modifier = Modifier.fillMaxWidth().background(Color(0xFFF0FFF0), shape = MaterialTheme.shapes.medium), singleLine = true)
                 }
             }
             Card(elevation = CardDefaults.cardElevation(4.dp), modifier = Modifier.fillMaxWidth()) {
                 Column(modifier = Modifier.padding(16.dp)) {
-                    Text("Ingredients Available", fontWeight = FontWeight.Bold, color = Color.Black)
+                    Text("Ingredients Available", fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
                     Spacer(modifier = Modifier.height(4.dp))
                     TextField(value = ingredients, onValueChange = { ingredients = it }, placeholder = { Text("E.g. Chicken breast, tomatoes, basil, olive oil") }, modifier = Modifier.fillMaxWidth().height(100.dp).background(Color(0xFFF0FFF0), shape = MaterialTheme.shapes.medium))
                 }
             }
             Card(elevation = CardDefaults.cardElevation(4.dp), modifier = Modifier.fillMaxWidth()) {
                 Column(modifier = Modifier.padding(16.dp)) {
-                    Text("Recipe Name (Optional)", fontWeight = FontWeight.Bold, color = Color.Black)
+                    Text("Recipe Name (Optional)", fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
                     Spacer(modifier = Modifier.height(4.dp))
                     TextField(value = name, onValueChange = { name = it }, placeholder = { Text("E.g. My Awesome Chicken Dish") }, modifier = Modifier.fillMaxWidth().background(Color(0xFFF0FFF0), shape = MaterialTheme.shapes.medium), singleLine = true)
                 }

@@ -41,7 +41,7 @@ fun SearchScreen(
         topBar = {
             TopAppBar(title = { Text("Search Saved Recipes") })
         },
-        bottomBar = { BottomNavBar(onNavigate) }
+        bottomBar = { BottomNavBar(selectedScreen = Screen.Search, onNavigate = onNavigate) }
     ) { paddingValues ->
         Column(
             modifier = Modifier
