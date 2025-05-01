@@ -48,7 +48,7 @@ fun RecipeCardScreen(
         topBar = {
             TopAppBar(title = { Text(text = title, maxLines = 1) })
         },
-        bottomBar = { BottomNavBar(onNavigate) }
+        bottomBar = { BottomNavBar(selectedScreen = Screen.Recipe, onNavigate = onNavigate) }
     ) { paddingValues ->
         Column(
             modifier = Modifier

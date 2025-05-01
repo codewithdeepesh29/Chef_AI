@@ -63,7 +63,10 @@ sealed class Screen(val routeBase: String) {
 
 /* ──────────────────────── NavHost ──────────────────────── */
 @Composable
-fun RecipeApp() {
+fun RecipeApp(
+    isDarkTheme: Boolean,
+    onToggleTheme: () -> Unit
+) {
 
     val navController = rememberNavController()
 
@@ -76,7 +79,9 @@ fun RecipeApp() {
         composable(Screen.Home.routeBase) {
             HomeScreen(
                 navController = navController,
-                onNavigate   = { screen -> navController.navigate(screen.routeBase) }
+                onNavigate   = { screen -> navController.navigate(screen.routeBase)},
+                isDarkTheme = isDarkTheme,
+                onToggleTheme = onToggleTheme
             )
         }
 
