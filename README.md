@@ -16,7 +16,7 @@
 ## ✨ What is Chef AI?
 
 **Chef AI** is an Android app that turns the ingredients you already own into delicious, step-by-step recipes—powered by the ChatGPT 4o model.  
-Stop wasting food, find inspiration fast, and share uniquely generated dishes with friends.
+Stop wasting food, find inspiration fast.
 
 | Home → Generate | Recipe Card | Search History |
 |:---:|:---:|:---:|
