@@ -22,6 +22,13 @@ Stop wasting food, find inspiration fast.
 |:---:|:---:|:---:|
 
 
+## Team Members
+
+1. Deepesh Katudia
+2. Connor Tway
+3. Ayush Sakariya
+
+
 ---
 
 ## 📋 Table of Contents
