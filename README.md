@@ -30,8 +30,6 @@ Stop wasting food, find inspiration fast, and share uniquely generated dishes wi
 3. [Prerequisites](#prerequisites)
 4. [Quick start](#quick-start)
 5. [Running the project](#running-the-project)
-6. [Testing](#testing)
-7. [Project structure](#project-structure)
 
 ---
 
