@@ -32,9 +32,6 @@ Stop wasting food, find inspiration fast, and share uniquely generated dishes wi
 5. [Running the project](#running-the-project)
 6. [Testing](#testing)
 7. [Project structure](#project-structure)
-8. [Contributing](#contributing)
-9. [Team](#team)
-10. [License](#license)
 
 ---
 
