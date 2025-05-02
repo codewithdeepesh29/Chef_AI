@@ -22,8 +22,6 @@ Stop wasting food, find inspiration fast, and share uniquely generated dishes wi
 |:---:|:---:|:---:|
 
 
-*`docs/screenshots/*` are placeholders—swap in your real screenshots before pushing.*
-
 ---
 
 ## 📋 Table of Contents
