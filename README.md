@@ -2,7 +2,6 @@
 <h1 align="center">👨‍🍳 Chef AI – Smart Recipe Generator</h1>
 
 <p align="center">
-  <img src="app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" width="100" alt="ChefAI logo" />
 </p>
 
 <p align="center">
