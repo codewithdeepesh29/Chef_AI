@@ -20,7 +20,7 @@ Stop wasting food, find inspiration fast, and share uniquely generated dishes wi
 
 | Home → Generate | Recipe Card | Search History |
 |:---:|:---:|:---:|
-| <img src="docs/screenshots/home.png" width="200"> | <img src="docs/screenshots/card.png" width="200"> | <img src="docs/screenshots/search.png" width="200"> |
+
 
 *`docs/screenshots/*` are placeholders—swap in your real screenshots before pushing.*
 
@@ -45,8 +45,7 @@ Stop wasting food, find inspiration fast, and share uniquely generated dishes wi
 - **AI recipe generation** — GPT 4o creates a full recipe from an idea & fridge contents  
 - **Beautiful recipe cards** — ingredients, timings, instructions, AI-generated image  
 - **Offline cache** — Room database stores every generated recipe, searchable offline  
-- **Dark-mode & dietary preference** — persisted in DataStore  
-- **Share-sheet integration** — one-tap share to any app  
+- **Dark-mode & dietary preference** — persisted in DataStore   
 - **Responsive UI** — works both portrait & landscape
 
 ---
