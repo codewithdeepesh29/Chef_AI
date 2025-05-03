@@ -54,7 +54,7 @@ Stop wasting food, find inspiration fast.
 | Layer | Library / Tool |
 |-------|----------------|
 | UI            | **Jetpack Compose**, Material 3, Coil |
-| State & DI    | ViewModel, Kotlin Coroutines, (optional) Hilt |
+| State & DI    | ViewModel, Kotlin Coroutines |
 | Networking    | **Retrofit 2** + OkHttp logging |
 | AI backend    | **OpenAI ChatGPT API** |
 | Persistence   | **Room** database • **DataStore** (preferences) |
